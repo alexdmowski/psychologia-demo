@@ -14,6 +14,7 @@
     "screenshots": "node scripts/screenshots.mjs",
     "build:share": "vite build --config vite.artifact.config.ts && node scripts/make-artifact.mjs",
     "build:pages": "vite build --config vite.pages.config.ts",
+    "deploy": "vite build --config vite.pages.config.ts && node scripts/deploy-pages.mjs",
     "preview:share": "vite preview --config vite.artifact.config.ts --port 4174"
   },
   "dependencies": {
