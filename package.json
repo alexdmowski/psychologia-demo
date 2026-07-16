@@ -1,0 +1,37 @@
+{
+  "name": "an-psychologia",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "test": "playwright test",
+    "test:desktop": "playwright test --project=desktop",
+    "test:mobile": "playwright test --project=mobile-small --project=mobile-typical --project=mobile-large --project=android",
+    "screenshots": "node scripts/screenshots.mjs",
+    "build:share": "vite build --config vite.artifact.config.ts && node scripts/make-artifact.mjs",
+    "build:pages": "vite build --config vite.pages.config.ts",
+    "preview:share": "vite preview --config vite.artifact.config.ts --port 4174"
+  },
+  "dependencies": {
+    "@fontsource-variable/albert-sans": "^5.2.8",
+    "@fontsource-variable/fraunces": "^5.2.9",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "oxlint": "^1.71.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}

@@ -1,0 +1,760 @@
+/* ────────────────────────────────────────────────────────────────────────────
+   KOMPONENTY: karty, akordeon, opinie, artykuły, cennik, kroki, logotypy
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* ── Karty ścieżek (3 grupy odbiorców) ── */
+
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+@media (max-width: 960px) {
+  .path-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.path-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-top: 4px solid var(--accent, var(--sage));
+  border-radius: var(--radius-m);
+  padding: 1.8rem 1.6rem 1.6rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.path-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+.path-card[data-area='psychologia'] {
+  --accent: var(--sage);
+}
+
+.path-card[data-area='coaching'] {
+  --accent: var(--copper);
+}
+
+.path-card[data-area='firmy'] {
+  --accent: var(--pine);
+}
+
+.path-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+.path-card[data-area='psychologia'] .path-card__icon {
+  background: var(--sage-tint);
+  color: var(--sage-strong);
+}
+
+.path-card[data-area='coaching'] .path-card__icon {
+  background: var(--copper-tint);
+  color: var(--copper-text);
+}
+
+.path-card[data-area='firmy'] .path-card__icon {
+  background: var(--pine-tint);
+  color: var(--pine);
+}
+
+.path-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.path-card p {
+  color: var(--muted);
+  flex-grow: 1;
+  margin-bottom: 1.3rem;
+}
+
+/* ── Plakietka obszaru ── */
+
+.area-chip {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+}
+
+.area-chip[data-area='psychologia'] {
+  background: var(--sage-tint);
+  color: var(--sage-strong);
+}
+
+.area-chip[data-area='coaching'] {
+  background: var(--copper-tint);
+  color: var(--copper-text);
+}
+
+.area-chip[data-area='firmy'] {
+  background: var(--pine-tint);
+  color: var(--pine);
+}
+
+/* ── Siatki kart ogólnych ── */
+
+.card-grid {
+  display: grid;
+  gap: 1.3rem;
+}
+
+.card-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 960px) {
+  .card-grid--3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .card-grid--2,
+  .card-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.soft-card {
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-m);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.soft-card h3,
+.soft-card h4 {
+  margin-bottom: 0.45rem;
+}
+
+.soft-card p {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* ── Lista „Być może jesteś tutaj…" ── */
+
+.maybe-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem 2.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .maybe-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.maybe-list li {
+  position: relative;
+  padding: 0.55rem 0 0.55rem 2rem;
+  font-size: 1.05rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.maybe-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  width: 18px;
+  height: 10px;
+  border-left: 2px solid var(--copper);
+  border-bottom: 2px solid var(--copper);
+  transform: rotate(-50deg);
+  border-radius: 1px;
+}
+
+/* ── Kroki procesu ── */
+
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.3rem;
+}
+
+@media (max-width: 1020px) {
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+.steps--vertical {
+  grid-template-columns: 1fr;
+  max-width: 760px;
+}
+
+.step {
+  counter-increment: step;
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-m);
+  padding: 1.6rem 1.4rem 1.4rem;
+  box-shadow: var(--shadow-card);
+}
+
+.step::before {
+  content: counter(step, decimal-leading-zero);
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--copper-text);
+  border: 1.5px solid var(--copper);
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.step h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.step p {
+  color: var(--muted);
+  font-size: 0.97rem;
+}
+
+/* ── Opinie ── */
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3rem;
+}
+
+@media (max-width: 1020px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-m);
+  padding: 1.6rem 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.testimonial--company {
+  background: var(--pine);
+  border-color: var(--pine);
+}
+
+.testimonial--company blockquote,
+.testimonial--company .testimonial__author {
+  color: var(--on-dark);
+}
+
+.testimonial--company .testimonial__context {
+  color: var(--on-dark-muted);
+}
+
+.testimonial blockquote {
+  font-size: 1.05rem;
+  font-style: normal;
+  font-family: var(--font-body);
+  color: var(--text);
+  flex-grow: 1;
+}
+
+.testimonial blockquote::before {
+  content: '„';
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  line-height: 0.6;
+  color: var(--copper);
+  margin-bottom: 0.6rem;
+}
+
+.testimonial footer {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.testimonial__author {
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.testimonial__context {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.testimonial .demo-badge {
+  align-self: flex-start;
+  margin-top: 0.7rem;
+}
+
+/* ── Logotypy klientów (fikcyjne znaki tekstowe) ── */
+
+.logo-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 860px) {
+  .logo-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.logo-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.15rem;
+  min-height: 84px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-m);
+  background: var(--white);
+  padding: 1rem;
+}
+
+.logo-mark__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.06rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.logo-mark__desc {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.75;
+}
+
+/* ── Artykuły ── */
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+@media (max-width: 1020px) {
+  .article-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+.article-card__img {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto; /* nadpisuje atrybut height, by działał aspect-ratio */
+  object-fit: cover;
+  background: var(--sage-tint);
+}
+
+.article-card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.3rem 1.4rem 1.4rem;
+}
+
+.article-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+}
+
+.article-card h3 {
+  font-size: 1.22rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-card h3 a:hover {
+  color: var(--copper-text);
+}
+
+.article-card p {
+  color: var(--muted);
+  font-size: 0.96rem;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+/* ── Akordeon FAQ ── */
+
+.accordion {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-m);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.accordion__item + .accordion__item {
+  border-top: 1px solid var(--line-soft);
+}
+
+.accordion__trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 1.15rem 1.4rem;
+  font-size: 1.06rem;
+  font-weight: 600;
+  color: var(--ink);
+  min-height: 56px;
+}
+
+.accordion__trigger:hover {
+  background: var(--paper-2);
+}
+
+.accordion__trigger .acc-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--copper);
+  color: var(--copper-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.accordion__trigger[aria-expanded='true'] .acc-icon {
+  transform: rotate(45deg);
+  background: var(--copper-tint);
+}
+
+.accordion__panel {
+  padding: 0 1.4rem 1.3rem;
+  color: var(--muted);
+  max-width: 72ch;
+}
+
+/* ── Cennik ── */
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1020px) {
+  .price-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .price-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-m);
+  padding: 1.7rem 1.5rem 1.5rem;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.price-card--highlight {
+  border: 2px solid var(--copper);
+}
+
+.price-card__flag {
+  position: absolute;
+  top: -13px;
+  left: 1.4rem;
+  background: var(--copper);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.2rem 0.8rem;
+}
+
+.price-card h3 {
+  margin: 0.5rem 0 0.15rem;
+}
+
+.price-card__duration {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.price-card__price {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--pine);
+  line-height: 1.1;
+}
+
+.price-card__price-note {
+  color: var(--copper-text);
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.price-card ul {
+  list-style: none;
+  margin: 1.1rem 0 1.4rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.price-card li {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: 0.96rem;
+  color: var(--muted);
+}
+
+.price-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 14px;
+  height: 8px;
+  border-left: 2px solid var(--sage-strong);
+  border-bottom: 2px solid var(--sage-strong);
+  transform: rotate(-50deg);
+}
+
+/* ── Pas CTA ── */
+
+.cta-band {
+  text-align: center;
+  padding: clamp(3rem, 6vw, 5rem) 1rem;
+  border-radius: var(--radius-l);
+  background:
+    radial-gradient(120% 160% at 85% -20%, rgba(169, 101, 59, 0.35), transparent 60%),
+    var(--pine);
+  color: var(--on-dark);
+}
+
+.cta-band h2 {
+  color: var(--white);
+  max-width: 22ch;
+  margin-inline: auto;
+}
+
+.cta-band p {
+  color: var(--on-dark-muted);
+  max-width: 52ch;
+  margin: 1rem auto 2rem;
+}
+
+.cta-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+/* ── Statystyki (dla firm) ── */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.stat {
+  text-align: center;
+  padding: 1.4rem 1rem;
+  border: 1px solid rgba(244, 241, 234, 0.2);
+  border-radius: var(--radius-m);
+}
+
+.stat__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 600;
+  color: var(--copper-light);
+  line-height: 1.05;
+}
+
+.stat__label {
+  color: var(--on-dark-muted);
+  font-size: 0.92rem;
+  margin-top: 0.45rem;
+}
+
+/* ── Motyw „nici rozmowy" ── */
+
+.thread {
+  color: var(--copper);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* ── Chips filtrów ── */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  border: 1.5px solid var(--line);
+  background: var(--white);
+  color: var(--text);
+  border-radius: 999px;
+  min-height: 44px;
+  padding: 0.4rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 550;
+}
+
+.chip:hover {
+  border-color: var(--sage-strong);
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--pine);
+  border-color: var(--pine);
+  color: var(--white);
+}
+
+/* ── Tabele / wiersze definicji ── */
+
+.info-rows {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+@media (max-width: 560px) {
+  .info-row {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+.info-row dt {
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.info-row dd {
+  margin: 0;
+  color: var(--muted);
+}

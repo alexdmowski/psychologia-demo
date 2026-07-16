@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="Poglądowa mapa okolicy gabinetu w Śródmieściu Warszawy — grafika demonstracyjna">
+  <!-- DEMONSTRACYJNY BLOK MAPY — przy wdrożeniu podmień na mapę (np. OpenStreetMap/Google) -->
+  <rect width="1200" height="640" fill="#eef0e9"/>
+  <!-- park -->
+  <path d="M0 420 q160 -60 300 -10 q120 44 220 10 l40 220 h-560z" fill="#dbe6d4"/>
+  <circle cx="150" cy="500" r="26" fill="#b9cbae"/>
+  <circle cx="230" cy="540" r="20" fill="#b9cbae"/>
+  <circle cx="310" cy="490" r="24" fill="#c5d4bb"/>
+  <!-- rzeka -->
+  <path d="M1040 0 q-40 160 40 320 q60 130 20 320 l120 0 0 -640z" fill="#cfdde2"/>
+  <!-- ulice -->
+  <g stroke="#ffffff" fill="none">
+    <path d="M0 160 H1030" stroke-width="26"/>
+    <path d="M0 340 H1010" stroke-width="34"/>
+    <path d="M0 540 H1060" stroke-width="22"/>
+    <path d="M240 0 V640" stroke-width="26"/>
+    <path d="M520 0 V640" stroke-width="34"/>
+    <path d="M800 0 V640" stroke-width="22"/>
+    <path d="M240 160 Q400 240 520 340" stroke-width="14"/>
+  </g>
+  <g stroke="#e3ddcf" fill="none">
+    <path d="M0 160 H1030" stroke-width="3" stroke-dasharray="14 12"/>
+    <path d="M0 340 H1010" stroke-width="3" stroke-dasharray="14 12"/>
+    <path d="M520 0 V640" stroke-width="3" stroke-dasharray="14 12"/>
+  </g>
+  <!-- kwartały budynków -->
+  <g fill="#e6e0d2">
+    <rect x="280" y="60" width="90" height="60" rx="6"/>
+    <rect x="400" y="40" width="80" height="80" rx="6"/>
+    <rect x="560" y="60" width="110" height="60" rx="6"/>
+    <rect x="700" y="40" width="70" height="80" rx="6"/>
+    <rect x="300" y="400" width="100" height="90" rx="6"/>
+    <rect x="560" y="380" width="120" height="100" rx="6"/>
+    <rect x="700" y="400" width="70" height="80" rx="6"/>
+    <rect x="840" y="200" width="120" height="100" rx="6"/>
+    <rect x="560" y="200" width="100" height="90" rx="6"/>
+    <rect x="280" y="200" width="120" height="90" rx="6"/>
+    <rect x="60" y="200" width="120" height="90" rx="6"/>
+    <rect x="60" y="40" width="130" height="80" rx="6"/>
+    <rect x="840" y="400" width="110" height="110" rx="6"/>
+    <rect x="840" y="560" width="140" height="50" rx="6"/>
+    <rect x="560" y="560" width="180" height="50" rx="6"/>
+  </g>
+  <!-- przystanek -->
+  <circle cx="520" cy="540" r="14" fill="#5f7360"/>
+  <text x="520" y="546" font-family="Arial, sans-serif" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="bold">M</text>
+  <!-- pinezka gabinetu -->
+  <g transform="translate(600 260)">
+    <circle cx="0" cy="10" r="46" fill="#a9653b" opacity="0.18"/>
+    <path d="M0 -46 q-38 0 -38 38 q0 26 38 64 q38 -38 38 -64 q0 -38 -38 -38z" fill="#a9653b"/>
+    <circle cx="0" cy="-8" r="15" fill="#faf7f2"/>
+  </g>
+  <text x="600" y="360" font-family="Arial, sans-serif" font-size="21" fill="#3a4642" text-anchor="middle" font-weight="600">Gabinet — ul. Mokotowska 12/4</text>
+</svg>

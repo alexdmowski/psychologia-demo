@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#21403a"/>
+  <circle cx="400" cy="225" r="150" fill="none" stroke="#2e544c" stroke-width="26"/>
+  <circle cx="400" cy="225" r="150" fill="none" stroke="#8fa08b" stroke-width="3" opacity="0.6"/>
+  <g font-family="Arial, sans-serif" font-size="20" fill="#c3cdc4" text-anchor="middle">
+    <text x="400" y="66">N</text>
+    <text x="400" y="404">S</text>
+    <text x="570" y="232">E</text>
+    <text x="230" y="232">W</text>
+  </g>
+  <path d="M400 225 L470 130" stroke="#e5b183" stroke-width="10" stroke-linecap="round"/>
+  <path d="M400 225 L355 290" stroke="#faf7f2" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+  <circle cx="400" cy="225" r="17" fill="#a9653b"/>
+  <circle cx="400" cy="225" r="6" fill="#faf7f2"/>
+</svg>

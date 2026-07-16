@@ -1,0 +1,66 @@
+/* ────────────────────────────────────────────────────────────────────────────
+   DESIGN TOKENS — tu zmieniasz paletę kolorów i typografię całej strony.
+   Kierunek: ciepła złamana biel, beż, szałwia, świerkowa zieleń, akcent miedzi.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Tła */
+  --paper: #faf7f2;        /* główne tło — złamana biel */
+  --paper-2: #f4eee4;      /* sekcje naprzemienne — jasny beż */
+  --sand: #ece3d3;         /* beż mocniejszy — pasy, wyróżnienia */
+  --white: #ffffff;
+
+  /* Zieleń świerkowa (kolor prowadzący) */
+  --pine: #21403a;
+  --pine-deep: #182f2a;
+  --pine-tint: #dfe7e0;
+
+  /* Szałwia (ścieżka: psychologia) */
+  --sage: #8fa08b;
+  --sage-strong: #5f7360;
+  --sage-tint: #e9efe6;
+
+  /* Miedź (akcent, ścieżka: coaching) */
+  --copper: #a9653b;       /* dekoracyjnie i duże napisy */
+  --copper-text: #8c4f2a;  /* bezpieczna kontrastowo na jasnym tle */
+  --copper-tint: #f2e3d6;
+  --copper-light: #e5b183; /* akcenty na ciemnym tle */
+
+  /* Tekst */
+  --ink: #233029;          /* nagłówki */
+  --text: #3a4642;         /* tekst podstawowy */
+  --muted: #5c6a64;        /* tekst drugorzędny (kontrast ≥ 4.5:1 na --paper) */
+  --on-dark: #f4f1ea;      /* tekst na ciemnej zieleni */
+  --on-dark-muted: #c3cdc4;
+
+  /* Linie, stany */
+  --line: #ddd3c2;
+  --line-soft: #e9e1d3;
+  --danger: #a23325;
+  --danger-bg: #f9ebe8;
+  --success: #3c684d;
+  --success-bg: #e8f0e9;
+
+  /* Focus — na jasnym tle */
+  --focus-ring: #8c4f2a;
+
+  /* Typografia */
+  --font-display: 'Fraunces Variable', 'Georgia', serif;
+  --font-body: 'Albert Sans Variable', 'Segoe UI', system-ui, sans-serif;
+
+  /* Kształty i cienie */
+  --radius-s: 10px;
+  --radius-m: 16px;
+  --radius-l: 24px;
+  --shadow-card: 0 1px 2px rgba(35, 48, 41, 0.05), 0 10px 30px rgba(35, 48, 41, 0.07);
+  --shadow-lift: 0 2px 4px rgba(35, 48, 41, 0.06), 0 18px 44px rgba(35, 48, 41, 0.12);
+
+  /* Layout */
+  --container: 1180px;
+  --header-h: 76px;
+}
+
+/* Sekcje ciemne zmieniają lokalnie kolory potomków */
+.on-dark {
+  --focus-ring: var(--copper-light);
+}
