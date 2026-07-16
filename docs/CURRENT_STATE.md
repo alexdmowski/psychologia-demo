@@ -3,6 +3,13 @@
 > Ostatnia aktualizacja: **2026-07-16 (po południu)**. Ten plik opisuje wyłącznie obecną prawdę.
 > Nadpisuj go po każdej większej zmianie; nie prowadź tu historii.
 
+## Publiczny adres
+
+**https://alexdmowski.github.io/psychologia-demo/** (GitHub Pages, gałąź gh-pages).
+Repo: https://github.com/alexdmowski/psychologia-demo. Aktualizacja strony:
+`npm run deploy`. Uwaga: token gh bez zakresu `workflow` — szablon CI w
+docs/deploy-workflow.yml.example (wymaga `gh auth refresh -s workflow`).
+
 ## Faza
 
 **Demo v1.3 UKOŃCZONE** — poprawione proporcje zdjęć (height:auto + aspect-ratio),
